@@ -4,8 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sender</title>
-</head>
-<body>
-    haaaaa
-</body>
+    <head>
+        <title>File Input Example</title>
+        <style>
+            body {
+                background-color: rgb(1, 6, 19);
+            }
+    
+            .file-input-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+    
+            .file-input-wrapper {
+                position: relative;
+                display: inline-block;
+            }
+    
+            .file-input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 100%;
+                width: 100%;
+            }
+    
+            .file-input-icon {
+                position: absolute;
+                top: 50%;
+                left: 10px;
+                transform: translateY(-50%);
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                background-image: url("search-icon.png"); /* Replace with your search icon image */
+                background-size: cover;
+            }
+            
+            .file-input-text {
+                padding-left: 30px;
+                
+            }
+            
+            .file-input-text::placeholder {
+                color: rgb(0, 0, 0);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="file-input-container">
+            <label class="file-input-wrapper" for="file-upload">
+                <span class="file-input-icon"></span>
+                <input type="file" id="file-upload" class="file-input" />
+                <input type="text" class="file-input-text" placeholder="Enter your file" readonly />
+            </label>
+        </div>
+    </body>
 </html>
