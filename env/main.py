@@ -8,6 +8,12 @@ app = Flask(__name__)
 def sender():
     return render_template('sender.html')
 
+@app.route('/register')
+def register():
+    """
+    user registration
+    """
+
 @app.route('/sent')
 def sent():
     """
