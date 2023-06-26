@@ -55,11 +55,19 @@
     </head>
     <body>
         <div class="file-input-container">
-            <label class="file-input-wrapper" for="file-upload">
-                <span class="file-input-icon"></span>
-                <input type="file" id="file-upload" class="file-input" />
-                <input type="text" class="file-input-text" placeholder="Enter your file" readonly />
-            </label>
+            <form action="/sent" method="post">
+                <input type="text" name="name" placeholder="short description of the file">
+                <input type="text" name="receiver" placeholder=" the recipient's alias (optional)">
+                <input type="number" name="cost" placeholder="file's worth">
+                <input type="text" name="payment_method" placeholder="choose payment method">
+                <label class="file-input-wrapper" for="file-upload">
+                    <span class="file-input-icon"></span>
+                    <input type="file" id="file-upload" class="file-input" />
+                    <input type="text" class="file-input-text" placeholder="Enter your file" readonly />
+                </label> 
+                <button type="submit">upload</button>         
+            </form>
+
         </div>
     </body>
 </html>
