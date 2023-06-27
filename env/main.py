@@ -14,7 +14,7 @@ def register():
     user registration
     """
 
-@app.route('/sent')
+@app.route('/sent', methods=['POST'])
 def sent():
     """
     receives the upload form and directs the user to a status page 
@@ -23,6 +23,12 @@ def sent():
     receiver = request.form['receiver']
     cost = request.form['cost']
     account = request.form['payment_method']
+    file = request.files['file']
+    file_name = file.filename
+
+    print(type(file))
+
+    return render_template('status.html')
 
 
 
