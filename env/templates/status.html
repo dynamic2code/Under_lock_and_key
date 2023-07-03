@@ -7,6 +7,14 @@
     <title>status</title>
 </head>
 <body>
-    <h3>the status of file comes here</h3>
+    <header>
+        <h3> The uploaded file's status will come here </h3>
+        <a href="{{ url_for('sender') }}"><button>Go to home</button></a>
+    </header>
+    <div>
+        <h3>Verified: {{status[0]}}</h3>
+        <h3>Viewed: {{status[1]}}</h3>
+        <h3>Payed: {{status[2]}}</h3>
+    </div>
 </body>
 </html>
