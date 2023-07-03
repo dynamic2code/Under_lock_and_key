@@ -1,10 +1,14 @@
 from flask import Flask, render_template, redirect, request
 from verifier import verifier
 from compressor import file_divider, file_encrypting
+import os
 # from flask_sslify import SSLify
 
 app = Flask(__name__)
 # sslify = SSLify(app)
+
+# Get the base directory of the virtual environment
+venv_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 @app.route('/')
 def sender():
@@ -35,7 +39,10 @@ def sent():
     payed = 'No'
 
     if verified == True:
-        divided_files = [file_divider(file)]
+        not_encrypted = os.path.join(venv_dir, 'files/not_encrypted')
+        encrypted = os.path.join(venv_dir, 'files/encrypted')
+        divided_files = file_divider(file, file_name, not_encrypted, encrypted)
+        print(divided_files)
         file_encrypting(divided_files[1])
 
 
