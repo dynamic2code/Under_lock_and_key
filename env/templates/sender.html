@@ -10,6 +10,7 @@
         </style>
     </head>
     <body>
+        <h3> File tracking will be lost on refresh if not registered</h3>
         <div class="file-input">
             <form action="/sent" method="post" enctype="multipart/form-data">
                 <input type="text" name="name" placeholder="short description of the file"> <br>
@@ -23,11 +24,18 @@
         <br>
         <div>
             <!-- register form -->
-            <form action="" method="post">
+            <form action="/register" method="post">
                 <input type="text" name="alias" placeholder="enter your alias"><br>
                 <input type="password" name="password" placeholder="enter your password"><br>
                 <button type="submit">register</button>
             </form>
+        </div>
+
+        <!-- where the files uploaded and their details show if registered -->
+        <div>
+            {% for file in files %}
+                <p>{{ file }}</p>
+            {% endfor %}
         </div>
     </body>
 </html>
