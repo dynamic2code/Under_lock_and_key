@@ -55,8 +55,6 @@ def sent():
     file = request.files['file']
     file_name = file.filename
 
-    print(type(file))
-
     verified = verifier(file)
     viewed = 'No'
     payed = 'No'
@@ -78,19 +76,25 @@ def sent():
         conn.commit()
         conn.close()
 
-
-
-
     status = [verified, viewed, payed]
     return render_template('status.html', status = status, link= link)
 
 @app.route('/view_file/<token>')
 def view_file(token):
     # Retrieve the file based on the token from the uploads database
-    
+    conn = sqlite3.connect(DATABASE)
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM uploads WHERE token = ?", (token,))
+    result = cursor.fetchone()
+
+    print (result)
+
+    conn.commit()
+    conn.close()
+
     
     # Pass the file path to the viewer template for rendering
-    return render_template('viewer.html')
+    return render_template('view_file.html', result = result)
 
 
 
