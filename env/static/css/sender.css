@@ -1,0 +1,129 @@
+header {
+    text-align: center;
+    font-family:  Arial, sans-serif;
+  }
+  
+  header h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  header h6 {
+    font-size: 14px;
+  }
+  
+.file-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .file-input form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .file-input input[type="text"],
+  .file-input input[type="number"],
+  .file-input input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  .file-input button[type="submit"] {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .file-input button[type="submit"]:hover {
+    background-color: darkblue;
+  }
+  
+  .register{
+    /* display: none; */
+    visibility: hidden;
+  }
+  footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid black;
+  padding: 10px;
+}
+
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register input {
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+.register button {
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
+.about,
+.contact {
+  flex: 1;
+  text-align: center;
+}
+
+.about h4,
+.contact h4 {
+  margin-bottom: 5px;
+}
+
+.about button {
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+footer {
+    display: flex;
+  }
+  
+  .about,
+  .contact {
+    flex: 1;
+    padding: 10px;
+  }
+  .about{
+    border-right: 1px solid black;
+  }
+  
+  .about h4,
+  .contact h4 {
+    margin-top: 0;
+  }
+  
+  .about button {
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  

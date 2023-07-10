@@ -6,11 +6,20 @@
     <title>Sender</title>
     <head>
         <title>File Input Example</title>
-        <style>
-        </style>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/sender.css') }}">
     </head>
     <body>
-        <h3> File tracking will be lost on refresh if not registered</h3>
+        <header>
+            <menu>
+                <menuitem label="Option 1"><a href="">Home</a></menuitem>
+                <menuitem label="Option 2"><a href="">About</a></menuitem>
+                <menuitem label="Option 3"><a href="">Contact</a></menuitem>
+            </menu>
+            <h1>UNDER LOCK AND KEY</h1>
+            <h6>The safest and most trusted way to send and receive files as or from a freelancer</h6>
+        </header>
+        <br>
+        <!-- <h3> File tracking will be lost on refresh if not registered</h3> -->
         <div class="file-input">
             <form action="/sent" method="post" enctype="multipart/form-data">
                 <input type="text" name="name" placeholder="short description of the file"> <br>
@@ -22,20 +31,29 @@
             </form>
         </div>
         <br>
-        <div>
-            <!-- register form -->
-            <form action="/register" method="post">
-                <input type="text" name="alias" placeholder="enter your alias"><br>
-                <input type="password" name="password" placeholder="enter your password"><br>
-                <button type="submit">register</button>
-            </form>
-        </div>
-
+        <hr>
         <!-- where the files uploaded and their details show if registered -->
         <div>
             {% for file in files %}
                 <p>{{ file }}</p>
             {% endfor %}
         </div>
+        <footer>
+            <!-- about and contact -->
+            <div class="about">
+                <h4>about</h4>
+                <p> We at dynamic labs have identified the problem that comes with freelancing. Late or no pay for submitted work and low quality work. With this cite we solve the problem by ensuring only quality work get sent and only paying viewers see the complete work.</p>
+                <button>Register</button>
+                <!-- register form -->
+                <form class="register" action="/register" method="post">
+                    <input type="text" name="alias" placeholder="enter your alias"><br>
+                    <input type="password" name="password" placeholder="enter your password"><br>
+                    <button type="submit">register</button>
+                </form>
+            </div>
+            <div class="contact">
+                <h4>contact</h4>
+            </div>
+        </footer>
     </body>
 </html>
