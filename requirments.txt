@@ -1,3 +1,4 @@
+flask==1.0.2
 Cython @ file:///buildstream-build
 Mako @ file:///buildstream-build
 Markdown @ file:///buildstream-build
